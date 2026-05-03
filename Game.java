@@ -11,7 +11,7 @@ public class Game
     private String title;
     private Genre genre;
     private Platform platform;
-    private AgeRating AgeRating;
+    private AgeRating ageRating;
     private boolean isMultiplayer;
     private double rating;
 
@@ -23,16 +23,14 @@ public class Game
         this.title = title;
         this.genre = genre;
         this.platform = platform;
-        this.AgeRating = ageRating;
+        this.ageRating = ageRating;
         this.isMultiplayer = isMultiplayer;
         this.rating = 0.0;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * 
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
      */
     public String getTitle()
     {
@@ -49,7 +47,7 @@ public class Game
     }
     
     public AgeRating getAgeRating() {
-        return AgeRating;
+        return ageRating;
     }
     
     public double getRating() {
@@ -58,6 +56,10 @@ public class Game
     
     public void setRating(double rating) {
         this.rating = rating;
+    }
+    
+    public String getDeatails(){
+        return toString();
     }
     
     public String toString() {
