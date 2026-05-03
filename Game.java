@@ -1,22 +1,31 @@
 
 /**
- * Write a description of class Game here.
+ * Represents a game in the library
  *
- * @author (your name)
+ * @author Eimaan & Asma
  * @version (a version number or a date)
  */
 public class Game
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String title;
+    private Genre genre;
+    private Platform platform;
+    private AgeRating AgeRating;
+    private boolean isMultiplayer;
+    private double rating;
 
     /**
      * Constructor for objects of class Game
      */
-    public Game()
+    public Game(String title, Genre genre, Platform platform, AgeRating ageRating, boolean isMultiplayer)
     {
-        // initialise instance variables
-        x = 0;
+        this.title = title;
+        this.genre = genre;
+        this.platform = platform;
+        this.AgeRating = ageRating;
+        this.isMultiplayer = isMultiplayer;
+        this.rating = 0.0;
     }
 
     /**
@@ -25,9 +34,34 @@ public class Game
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public String getTitle()
     {
         // put your code here
-        return x + y;
+        return title;
+    }
+    
+    public Genre getGenre() {
+        return genre;
+    }
+    
+    public Platform getPlatform() {
+        return platform;
+    }
+    
+    public AgeRating getAgeRating() {
+        return AgeRating;
+    }
+    
+    public double getRating() {
+        return rating;
+    }
+    
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+    
+    public String toString() {
+        return title + " - " + genre + " - " + platform +" Rating " + rating;
     }
 }
+

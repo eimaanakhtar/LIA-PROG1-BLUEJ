@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Multiplayer
+public class isMultiplayer
 {
     // instance variables - replace the example below with your own
     private int x;
@@ -13,7 +13,7 @@ public class Multiplayer
     /**
      * Constructor for objects of class Multiplayer
      */
-    public Multiplayer()
+    public isMultiplayer()
     {
         // initialise instance variables
         x = 0;
