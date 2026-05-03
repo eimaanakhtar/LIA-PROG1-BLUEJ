@@ -1,33 +1,48 @@
 
 /**
- * Write a description of class GameSession here.
+ * Represents a game session
  *
- * @author (your name)
+ * @author Eimaan & Asma
  * @version (a version number or a date)
  */
 public class GameSession
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private Game game;
+    private int durationMinutes;
+    private String timeStamp;
 
     /**
      * Constructor for objects of class GameSession
      */
-    public GameSession()
+    public GameSession(Game game, int durationMinutes, String timeStamp)
     {
-        // initialise instance variables
-        x = 0;
+        this.game = game;
+        this.durationMinutes = durationMinutes;
+        this.timeStamp = timeStamp;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public Game getGame()
     {
-        // put your code here
-        return x + y;
+        return game;
+    }
+    
+    /**
+     */
+    public int getDuration()
+    {
+        return durationMinutes;
+    }
+    
+    /**
+     */
+    public String getTimeStamp()
+    {
+        return timeStamp;
+    }
+    
+    public String toString() {
+        return game.getTitle() + " played for " +  durationMinutes +"  minutes";
     }
 }
