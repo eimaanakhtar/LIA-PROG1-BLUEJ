@@ -2,7 +2,7 @@
 /**
  * Represents a game session
  *
- * @author Eimaan & Asma
+ * @author Eimaan 
  * @version (a version number or a date)
  */
 public class GameSession
@@ -42,6 +42,8 @@ public class GameSession
         return timeStamp;
     }
     
+    /**
+    */
     public String toString() {
         return game.getTitle() + " played for " +  durationMinutes +"  minutes";
     }

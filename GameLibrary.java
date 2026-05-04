@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Manages the game library
  *
- * @author Eimaan & Asma
+ * @author Eimaan 
  * 
  */
 public class GameLibrary
