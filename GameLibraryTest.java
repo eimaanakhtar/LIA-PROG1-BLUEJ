@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class GameLibraryTest.
  *
- * @author  (your name)
+ * @author  Asma
  * @version (a version number or a date)
  */
 public class GameLibraryTest
@@ -16,27 +16,19 @@ public class GameLibraryTest
     /**
      * Default constructor for test class GameLibraryTest
      */
-    public GameLibraryTest()
+    public static void main(String[]args)
     {
-    }
-
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
-    @BeforeEach
-    public void setUp()
-    {
-    }
-
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
+        GameLibrary lib=new GameLibrary();
+        Game g1=new Game("COD", Genre.ACTION, Platform.XBOX, AgeRating.MATURE, true);
+        
+        lib.addGame(g1);
+        //Test 1 
+        if (lib.findGame("COD")!=null){
+            System.out.println("PASS 1");
+        }
+        //Test 2
+        if (lib.findGame("Minecraft")==null){
+            System.out.println("PASS 2");
+        }
     }
 }

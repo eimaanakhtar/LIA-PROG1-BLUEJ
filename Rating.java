@@ -5,29 +5,18 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Rating
+public enum Rating
 {
     // instance variables - replace the example below with your own
-    private int x;
+    ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5);
 
-    /**
-     * Constructor for objects of class Rating
-     */
-    public Rating()
-    {
-        // initialise instance variables
-        x = 0;
+    private final int value;
+
+    Rating(int value) {
+        this.value = value;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public int getValue() {
+        return value;
     }
 }
