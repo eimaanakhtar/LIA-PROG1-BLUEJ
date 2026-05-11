@@ -22,6 +22,32 @@ public class GameLibrary
     }
 
     /**
+     * Main method
+     */
+    public static void main(String[] args){
+        GameLibrary myLibrary = new GameLibrary();
+        System.out.println("Game is starting...");
+        
+        Game g1 = new Game("Super Mario", Genre.PLATFORMER, Platform.SWITCH, AgeRating.EVERYONE, true);
+        Game g2 = new Game("Minecraft", Genre.PLATFORMER, Platform.PC, AgeRating.EVERYONE, true);
+        Game g3 = new Game("Elden Ring", Genre.RPG, Platform.PS5, AgeRating.MATURE, true);
+
+    
+        myLibrary.addGame(g1);
+        myLibrary.addGame(g2);
+        myLibrary.addGame(g3);
+
+        myLibrary.printLibraryDetails();
+
+        System.out.println("\nSearching for 'Minecraft'...");
+        Game found = myLibrary.findGame("Minecraft");
+        if(found != null) {
+        System.out.println("Found: " + found);
+        }
+    }
+        
+    
+    /**
      * Pseudocode:
      * add game to collection
      *

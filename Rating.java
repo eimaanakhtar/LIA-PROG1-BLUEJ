@@ -2,7 +2,7 @@
 /**
  * Write a description of class Rating here.
  *
- * @author (your name)
+ * @author Asma
  * @version (a version number or a date)
  */
 public enum Rating
