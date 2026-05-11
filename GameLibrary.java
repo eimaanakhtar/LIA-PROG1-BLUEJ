@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.ArrayList;
+
 /**
  * Manages the game library
  *
@@ -24,30 +25,62 @@ public class GameLibrary
     /**
      * Main method
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
         GameLibrary myLibrary = new GameLibrary();
-        System.out.println("Game is starting...");
+        Menu menu = new Menu(); 
+        boolean finished = false;
+
+        System.out.println("###############################");
+        System.out.println("#  LOADING GAME LIBRARY...    #");
+        System.out.println("###############################");
         
-        Game g1 = new Game("Super Mario", Genre.PLATFORMER, Platform.SWITCH, AgeRating.EVERYONE, true);
-        Game g2 = new Game("Minecraft", Genre.PLATFORMER, Platform.PC, AgeRating.EVERYONE, true);
-        Game g3 = new Game("Elden Ring", Genre.RPG, Platform.PS5, AgeRating.MATURE, true);
+        
+        myLibrary.addGame(new Game("Super Mario", Genre.PLATFORMER, Platform.SWITCH, AgeRating.EVERYONE, true));
+        myLibrary.addGame(new Game("Minecraft", Genre.PLATFORMER, Platform.PC, AgeRating.EVERYONE, true));
 
-    
-        myLibrary.addGame(g1);
-        myLibrary.addGame(g2);
-        myLibrary.addGame(g3);
+        printWelcome();
 
-        myLibrary.printLibraryDetails();
+        while(!finished) {
+            HashSet<String> inputWords = menu.getInput();
 
-        System.out.println("\nSearching for 'Minecraft'...");
-        Game found = myLibrary.findGame("Minecraft");
-        if(found != null) {
-        System.out.println("Found: " + found);
+            if(inputWords.contains("quit") || inputWords.contains("0")) {
+                finished = true;
+            } 
+            else if(inputWords.contains("1") || inputWords.contains("list")) {
+                myLibrary.printLibraryDetails();
+            } 
+            // NEW SECTION START
+            else if(inputWords.contains("2") || inputWords.contains("add")) {
+                System.out.println("Enter the title of the game:");
+                
+                HashSet<String> nameInput = menu.getInput();
+                
+                String title = String.join(" ", nameInput); 
+                
+                Game userGame = new Game(title, Genre.ACTION, Platform.PC, AgeRating.EVERYONE, true);
+                myLibrary.addGame(userGame);
+                
+                System.out.println("Added: " + title + " to your library!");
+            }
+            // NEW SECTION END
+            else if(inputWords.contains("help")) {
+                printWelcome();
+            }
+            else {
+                System.out.println("Command not recognized. Type 'help' for options.");
+            }
         }
+        System.out.println("Goodbye! Have a great day.");
+    }
+
+    private static void printWelcome() {
+        System.out.println("\n--- OPTIONS ---");
+        System.out.println("1: List all games");
+        System.out.println("2: Add a new game"); 
+        System.out.println("quit: Exit the program");
     }
         
-    
-    /**
+     /**
      * Pseudocode:
      * add game to collection
      *

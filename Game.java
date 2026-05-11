@@ -1,4 +1,3 @@
-
 /**
  * Represents a game in the library
  *
