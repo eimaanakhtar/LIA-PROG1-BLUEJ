@@ -2,7 +2,7 @@
 /**
  * Write a description of class Platform here.
  *
- * @author (your name)
+ * @author Asma
  * @version (a version number or a date)
  */
 public enum Platform
