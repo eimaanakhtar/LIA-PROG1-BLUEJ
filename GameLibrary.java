@@ -136,7 +136,7 @@ public class GameLibrary
      */
     public void printLibraryDetails()
     {
-        System.out.println("Total games: + " + games.size());
+        System.out.println("Total games: " + games.size());
         
         for(Game g : games) {
             System.out.println(g);

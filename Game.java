@@ -57,7 +57,7 @@ public class Game
         this.rating = rating;
     }
     
-    public String getDeatails(){
+    public String getDetails(){
         return toString();
     }
     
